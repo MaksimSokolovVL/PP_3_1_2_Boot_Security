@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title></title>
+</head>
+<body>
+<div th:replace="parts/header :: content"></div>
+
+<h1 class="top-h1">User accounting</h1>
+<div class="container">
+    <div class="table-container">
+        <table class="table-class" id="table-id" name="table-name">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Login</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>Roles</th>
+                <th>Active</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user, index  : ${users}">
+
+                <td th:text="${index.index + 1}"></td>
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.surname}"></td>
+                <td th:text="${user.age}"></td>
+                <td th:text="${user.roles}"></td>
+                <td th:text="${user.active}"></td>
+                <td th:text="${user.password}"></td>
+
+                <form th:action="@{/updateInfo(empId=${user.id})}" method="post">
+                    <td>
+                        <button type="submit">Update</button>
+                    </td>
+                </form>
+                <form th:action="@{/deleteUser(empId=${user.id})}" method="post">
+                    <td>
+                        <button type="submit">Delete</button>
+                    </td>
+                </form>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="button-container">
+        <img class="img_gif" src="/img/edit1.gif" alt="#">
+        <button type="submit" onclick="window.location.href = '/addNewUser'">Add User</button>
+    </div>
+</div>
+</body>
+</html>

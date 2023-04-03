@@ -1,0 +1,115 @@
+.table {
+    width: 80%;
+    border-collapse: collapse;
+    background: beige;
+    margin: 0 auto;
+}
+
+
+/*---------------------*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+ margin: 10px;
+}
+
+.img_gif {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+/*-----------------------*/
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    color: #f8d16d;
+}
+
+.error-message {
+    color: red;
+}
+
+
+/*-------------------------*/
+.center {
+    text-align: center;
+}
+
+thead tr,
+th {
+    background-color: #f8d16d;
+    color: #000000;
+    text-align: center;
+    border: 1px solid black;
+}
+
+tbody td {
+    border: 1px solid #644b12;
+    padding: 5px;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    padding-left: 1%;
+}
+
+
+.top-h1 {
+    font-size: 30px;
+    font-family: 'Diablo', sans-serif;
+    text-align: center;
+}
+
+.top-h5 {
+    font-size: 16px;
+    font-family: 'Diablo', sans-serif;
+}
+
+@font-face {
+    font-family: 'Diablo';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Diablo'), url('https://fonts.cdnfonts.com/s/12968/diablo.woff') format('woff');
+}
+
+/*-------------------------*/
+
+.login-logout {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
