@@ -1,26 +1,28 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
-<div th:fragment="content">
+<div class="shadow-sm p-3 mb-5 bg-body rounded" th:fragment="content">
     <header class="header">
         <div class="login-logout">
-            <a class="button" href="/">
-                <button>Home</button>
+            <a href="/">
+                <button class="button btn btn-outline-primary">Home</button>
             </a>
-            <a class="button" th:href="@{/admin}" sec:authorize="hasRole('ROLE_ADMIN')">
-                <button>Admin</button>
+            <a th:href="@{/admin}" sec:authorize="hasRole('ROLE_ADMIN')">
+                <button class="button btn btn-outline-primary">Admin</button>
             </a>
-            <a class="button" th:href="@{/user}" sec:authorize="hasRole('ROLE_USER')">
-                <button>User</button>
+            <a th:href="@{/user}" sec:authorize="hasRole('ROLE_USER')">
+                <button class="button btn btn-outline-primary">User</button>
             </a>
-            <a class="button" th:href="@{/login}" sec:authorize="isAnonymous()">
-                <button>Log in</button>
+
+            <a th:href="@{/login}" sec:authorize="isAnonymous()">
+                <button class="button btn btn-outline-primary">Log in</button>
             </a>
-            <form class="button" th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
-                <input type="submit" value="Log Out"/>
+            <form  th:action="@{/logout}" method="post"
+                   sec:authorize="isAuthenticated()">
+                <input class="button btn btn-outline-primary" type="submit" value="Log Out"/>
             </form>
-            <a class="button" th:href="@{/registration}" sec:authorize="isAnonymous()">
-                <button>Registration</button>
+            <a th:href="@{/registration}" sec:authorize="isAnonymous()">
+                <button class="button btn btn-outline-primary">Registration</button>
             </a>
         </div>
     </header>

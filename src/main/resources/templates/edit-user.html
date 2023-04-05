@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
     <title>Update User</title>
 </head>
 <body>
@@ -13,7 +15,7 @@
     <p th:text="${user_message}"></p>
 </div>
 
-<form th:action="@{/update_user}" th:object="${edit_user}"
+<form th:action="@{/admin/update_user}" th:object="${edit_user}"
       method="post" style="max-width: 600px; margin: 0 auto;">
     <input type="hidden" th:field="*{id}"/>
     <div class="m-3">
@@ -23,7 +25,6 @@
                 <input type="text" th:field="*{username}" class="form-control" required/>
             </div>
         </div>
-        <br>
 
         <div class="form-group">
             <label class="col-4 col-form-label">Password: </label>
@@ -32,7 +33,6 @@
                        required minlength="1" maxlength="10"/>
             </div>
         </div>
-        <br>
 
         <div class="form-group">
             <label class="col-4 col-form-label">Name: </label>
@@ -42,7 +42,6 @@
                 <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
             </div>
         </div>
-        <br>
 
         <div class="form-group">
             <label class="col-4 col-form-label">Surname: </label>
@@ -53,21 +52,21 @@
                 </div>
             </div>
         </div>
-        <br>
 
         <div class="form-group">
-            <label for="age">You age:</label>
-            <div>
-                <input type="number" id="age" th:field="*{age}" th:required="true"
+            <label class="col-4 col-form-label" for="age">You age:</label>
+            <div class="col-8">
+                <input class="form-control" type="number" id="age" th:field="*{age}" th:required="true"
                        minlength="2" maxlength="20">
-                <div class="error-message" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Name Error</div>
+                <div class="error-message" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Name Error
+                </div>
             </div>
         </div>
-        <br>
+
 
         <label for="act">Active:</label>
         <input type="checkbox" id="act" th:field="*{active}">
-        <br><br>
+        <br>
 
         <fieldset class="roles">
             <legend class="col-4 col-form-label">Roles:</legend>
